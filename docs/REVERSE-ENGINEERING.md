@@ -132,6 +132,9 @@ Why this won:
 - the serial log is a clean, timestamped capture;
 - replay is trivial: write the same hex to the real device with Bleak.
 
+The sanitized versions of both relays live in
+[tools/relay](../tools/relay/README.md).
+
 ## 5. First capture: what the app does on connect
 
 The app sends a time sync immediately after connecting:

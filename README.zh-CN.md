@@ -241,7 +241,8 @@ curl -u admin:****** -F "file=@.pio/build/es3c28p/firmware.bin" \
 
 完整逆向文档见 [docs/BLE-PROTOCOL.md](docs/BLE-PROTOCOL.md)，
 抓包与中继的完整过程见 [docs/REVERSE-ENGINEERING.zh-CN.md](docs/REVERSE-ENGINEERING.zh-CN.md)
-（冒充外设、第一次抓包、命令扫描）。速览：
+（冒充外设、第一次抓包、命令扫描）。中继工具本体在
+[tools/relay/](tools/relay/README.zh-CN.md)（macOS 代理 + ESP32 串口中继）。速览：
 
 ```
 AA AF CMD LEN payload... CHK        CHK = 前面所有字节求和 & 0xFF
