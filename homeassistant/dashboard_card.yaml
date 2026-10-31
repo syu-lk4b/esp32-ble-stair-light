@@ -1,0 +1,25 @@
+type: vertical-stack
+cards:
+  - type: entities
+    title: Stair lights
+    entities:
+      - entity: binary_sensor.downstair_stair_ble
+        name: Downstairs BLE
+      - entity: binary_sensor.upstair_stair_ble
+        name: Upstairs BLE
+      - entity: input_button.stair_ble_reconnect
+      - entity: input_button.stair_sync_time
+
+  - type: entities
+    title: Downstairs
+    entities:
+      - entity: input_select.downstair_stair_mode
+      - entity: input_number.downstair_step_brightness
+      - entity: input_number.downstair_flow_brightness
+
+  - type: entities
+    title: Upstairs
+    entities:
+      - entity: input_select.upstair_stair_mode
+      - entity: input_number.upstair_step_brightness
+      - entity: input_number.upstair_flow_brightness

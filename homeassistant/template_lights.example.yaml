@@ -1,0 +1,58 @@
+# Optional: expose each stair light as a Home Assistant `light` entity so the
+# HomeKit Bridge can publish it to Apple Home / Siri.
+#
+# Copy into your configuration (or a package) and adapt the on/off semantics.
+#
+# NOTE: the observed BLE protocol has no explicit power command — it only has
+# six modes and two brightness values.  This example therefore treats
+# "step brightness > 0" as on and "step brightness = 0" as off.  If your
+# controller ignores brightness 0, use a different condition or an
+# input_boolean as the virtual power state.
+
+template:
+  - light:
+      - name: "Downstairs stair light"
+        unique_id: downstair_stair_light
+        state: "{{ states('input_number.downstair_step_brightness') | int(0) > 0 }}"
+        brightness: "{{ (states('input_number.downstair_step_brightness') | int(0) * 2.55) | round(0) }}"
+        turn_on:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.downstair_step_brightness
+            data:
+              value: 79
+        turn_off:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.downstair_step_brightness
+            data:
+              value: 0
+        set_brightness:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.downstair_step_brightness
+            data:
+              value: "{{ (brightness / 2.55) | round(0) }}"
+
+      - name: "Upstairs stair light"
+        unique_id: upstair_stair_light
+        state: "{{ states('input_number.upstair_step_brightness') | int(0) > 0 }}"
+        brightness: "{{ (states('input_number.upstair_step_brightness') | int(0) * 2.55) | round(0) }}"
+        turn_on:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.upstair_step_brightness
+            data:
+              value: 79
+        turn_off:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.upstair_step_brightness
+            data:
+              value: 0
+        set_brightness:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.upstair_step_brightness
+            data:
+              value: "{{ (brightness / 2.55) | round(0) }}"

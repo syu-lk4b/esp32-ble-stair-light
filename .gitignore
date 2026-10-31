@@ -1,0 +1,20 @@
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Secrets - NEVER commit
+include/secrets.h
+include/secrets.h.bak.*
+secrets.h
+
+# Archify working files (the rendered diagram in docs/ is committed)
+.archify/
+
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
