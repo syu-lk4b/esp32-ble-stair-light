@@ -239,7 +239,9 @@ curl -u admin:****** -F "file=@.pio/build/es3c28p/firmware.bin" \
 
 ## BLE 协议
 
-完整逆向文档见 [docs/BLE-PROTOCOL.md](docs/BLE-PROTOCOL.md)，速览：
+完整逆向文档见 [docs/BLE-PROTOCOL.md](docs/BLE-PROTOCOL.md)，
+抓包与中继的完整过程见 [docs/REVERSE-ENGINEERING.zh-CN.md](docs/REVERSE-ENGINEERING.zh-CN.md)
+（冒充外设、第一次抓包、命令扫描）。速览：
 
 ```
 AA AF CMD LEN payload... CHK        CHK = 前面所有字节求和 & 0xFF

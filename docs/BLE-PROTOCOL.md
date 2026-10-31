@@ -5,6 +5,9 @@ that ship with a phone app and an RF remote. It was recovered by sniffing the
 app's GATT traffic. It is **not** documented by the vendor and may differ
 between batches.
 
+> The full capture setup, relay topologies and dead ends are written up in
+> [REVERSE-ENGINEERING.md](REVERSE-ENGINEERING.md).
+
 ## GATT
 
 | | |
