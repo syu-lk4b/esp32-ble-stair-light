@@ -1,0 +1,81 @@
+# ESP32 BLE stair light panel — required Home Assistant helpers.
+#
+# Install:
+#   1. Copy this file to /config/packages/stair_light.yaml
+#   2. Make sure configuration.yaml loads packages:
+#        homeassistant:
+#          packages: !include_dir_named packages
+#   3. Restart Home Assistant (or reload the YAML configuration).
+#
+# The option strings below MUST match MODE_OPTIONS in src/main.cpp character
+# for character.  The panel sends these strings back to HA when the physical
+# buttons are used.
+
+input_select:
+  downstair_stair_mode:
+    name: Downstairs stair mode
+    options:
+      - "0-全亮模式"
+      - "1-交替模式"
+      - "2-流水模式"
+      - "3-逐步模式"
+      - "4-跟随模式"
+      - "5-随机模式"
+    icon: mdi:stairs
+
+  upstair_stair_mode:
+    name: Upstairs stair mode
+    options:
+      - "0-全亮模式"
+      - "1-交替模式"
+      - "2-流水模式"
+      - "3-逐步模式"
+      - "4-跟随模式"
+      - "5-随机模式"
+    icon: mdi:stairs
+
+input_number:
+  downstair_step_brightness:
+    name: Downstairs step brightness
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    unit_of_measurement: "%"
+    icon: mdi:brightness-6
+
+  downstair_flow_brightness:
+    name: Downstairs flow brightness
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    unit_of_measurement: "%"
+    icon: mdi:brightness-5
+
+  upstair_step_brightness:
+    name: Upstairs step brightness
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    unit_of_measurement: "%"
+    icon: mdi:brightness-6
+
+  upstair_flow_brightness:
+    name: Upstairs flow brightness
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    unit_of_measurement: "%"
+    icon: mdi:brightness-5
+
+input_button:
+  stair_sync_time:
+    name: Stair light sync time
+    icon: mdi:clock-check-outline
+
+  stair_ble_reconnect:
+    name: Stair light reconnect
+    icon: mdi:bluetooth-connect
