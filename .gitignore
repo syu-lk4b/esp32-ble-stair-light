@@ -11,6 +11,9 @@ secrets.h
 # Archify working files (the rendered diagram in docs/ is committed)
 .archify/
 
+# Relay captures
+tools/relay/*.log
+
 # macOS
 .DS_Store
 ._*

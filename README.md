@@ -249,7 +249,8 @@ curl -u admin:****** -F "file=@.pio/build/es3c28p/firmware.bin" \
 See [docs/BLE-PROTOCOL.md](docs/BLE-PROTOCOL.md) for the full reverse-engineered
 spec, and [docs/REVERSE-ENGINEERING.md](docs/REVERSE-ENGINEERING.md) for how it
 was captured: the fake-peripheral relay, the first packet, and the command
-sweep.
+sweep. The relays themselves are in
+[tools/relay/](tools/relay/README.md) (macOS proxy + ESP32 serial relay).
 
 The short version:
 
