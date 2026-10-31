@@ -247,7 +247,11 @@ curl -u admin:****** -F "file=@.pio/build/es3c28p/firmware.bin" \
 ## BLE protocol
 
 See [docs/BLE-PROTOCOL.md](docs/BLE-PROTOCOL.md) for the full reverse-engineered
-spec. The short version:
+spec, and [docs/REVERSE-ENGINEERING.md](docs/REVERSE-ENGINEERING.md) for how it
+was captured: the fake-peripheral relay, the first packet, and the command
+sweep.
+
+The short version:
 
 ```
 AA AF CMD LEN payload... CHK        CHK = sum(previous bytes) & 0xFF
